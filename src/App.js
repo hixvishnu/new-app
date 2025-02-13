@@ -5,7 +5,7 @@ import Navbar from './components/Navbar';
 function App() {
   return (
     <>
-    <Navbar title="Navbar3" />
+    <Navbar title={2343} aboutText="About Uss"/>
     </>
   );
 }
