@@ -2,8 +2,15 @@ import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
-// import About from './components/About';
+import About from './components/About';
 import React, { useState } from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Routes,
+} from "react-router-dom";
 
 function App() {
 
@@ -21,15 +28,16 @@ function App() {
   }
 
   return (
-    <>
-    <Navbar title="TextApp" aboutText="About" mode={mode} toggleMode={toggleMode}/>
 
-    <div className="container my-3">
-    <TextForm heading="Enter the text to analyze below" mode={mode}/>
-    {/* <About /> */}
-    </div>
-
-    </>
+    <Router>
+      <Navbar title="TextApp" aboutText="About" mode={mode} toggleMode={toggleMode} />
+      <div className="container my-3">
+      <Routes>
+        <Route path="/" element={<TextForm heading="Enter the text to analyze below" mode={mode}/>}  />
+        <Route path="/about" element={<About />} />
+      </Routes>
+      </div>
+    </Router>
   );
 }
 
