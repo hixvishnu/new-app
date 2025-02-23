@@ -6,9 +6,7 @@ import About from './components/About';
 import React, { useState } from 'react';
 import {
   BrowserRouter as Router,
-  Switch,
   Route,
-  Link,
   Routes,
 } from "react-router-dom";
 
